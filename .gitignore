@@ -1,2 +1,6 @@
 .vscode/
 *.json
+*.dSym
+GlassesRecognition
+a.out
+*.class
