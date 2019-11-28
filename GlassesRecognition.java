@@ -1,7 +1,8 @@
 
 public class GlassesRecognition {
+    ToolMainFrame jfToolMainFrame;
     public static void main(String args[]) {
-        // 画像読み込み
-        RGBImage rgbImage[] = new RGBImage[2];
+        // フレーム作成
+        ToolMainFrame mainFrame = new ToolMainFrame();
     }
 }
