@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,6 +46,7 @@ class TitleIconPanel extends JPanel {
     // Constructor
     TitleIconPanel() {
         iTitleImage = new ImageIcon("./ImageDirectory/MOMTitleImage.png");
+        iTitleImage = resizeIcon(iTitleImage, 690, 490);
         jlTitleImage = new JLabel();
         if (iTitleImage!=null) {
             jlTitleImage.setIcon(iTitleImage);
