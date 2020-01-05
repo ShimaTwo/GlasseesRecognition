@@ -18,25 +18,17 @@ import javax.swing.JPanel;
 class TitlePanel extends JPanel {
     // Constructor
     TitleIconPanel   iconPanel;
-    TitleButtonPanel buttonPanel;
     TitlePanel() {
         iconPanel = new TitleIconPanel();
-        buttonPanel = new TitleButtonPanel();
         // add panels
         BorderLayout layout = new BorderLayout();
         setIconPanel(layout);
-        setButtonPanel(layout);
     }
 
     public void setIconPanel(BorderLayout layout) {
         // set panels
         this.setLayout(layout);
         this.add(iconPanel, BorderLayout.CENTER);
-    }
-
-    public void setButtonPanel(BorderLayout layout) {
-        this.setLayout(layout);
-        this.add(buttonPanel, BorderLayout.SOUTH);
     }
 }
 
@@ -67,38 +59,5 @@ class TitleIconPanel extends JPanel {
         ImageIcon iiResize = new ImageIcon();
         iiResize.setImage(resizedImage);
         return iiResize;
-    }
-}
-
-class TitleButtonPanel extends JPanel implements ActionListener {
-    private JButton jbNext;
-    private JButton jbBefore;
-    private JButton jbCancel;
-    // Constructor
-    TitleButtonPanel() {
-        // initial each button and set action listener
-        jbNext = new JButton("Next");
-        jbNext.addActionListener(this);
-        jbNext.setActionCommand("NextButton");
-        jbBefore = new JButton("Prev");
-        jbBefore.addActionListener(this);
-        jbBefore.setEnabled(false);
-        jbBefore.setActionCommand("BeforeButton");
-        jbCancel = new JButton("Cancel");
-        jbCancel.addActionListener(this);
-        jbCancel.setActionCommand("CancelButton");
-        // distribute buttons with flow layout
-        this.setLayout(new FlowLayout());
-        this.add(jbCancel);
-        this.add(jbBefore);
-        this.add(jbNext);
-        // set panel background clear
-        // this.setOpaque(false);
-        this.setBackground(Color.DARK_GRAY);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
     }
 }
