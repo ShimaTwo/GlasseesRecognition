@@ -36,6 +36,14 @@ class ButtonPanel extends JPanel implements ActionListener {
         this.setBackground(Color.DARK_GRAY);
     }
 
+    public void activateNextButton(boolean bool) {
+        jbNext.setEnabled(bool);
+    }
+
+    public void activatePreButton(boolean bool) {
+        jbBefore.setEnabled(bool);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();

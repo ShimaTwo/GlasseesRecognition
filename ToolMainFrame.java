@@ -33,16 +33,17 @@ class ToolMainFrame extends JFrame {
         remeveCurrentPanel();
         if (panelCount == 0) {
             // title panel
-
+            showTitlePanel();
         } else if (panelCount == 1) {
             // data input
-            this.add(jpInputDataSelect);
-            revalidate();
+            showInputDataSelectPanel();
         } else if (panelCount == 2) {
             // learning parameta
         } else {
             // error
+            System.exit(0);
         }
+        repaintPanels();     
     }
 
     // in fact, remove all panel
@@ -53,14 +54,29 @@ class ToolMainFrame extends JFrame {
     }
 
     public void showTitlePanel() {
-
+        this.add(jpTitlePanel);
+        jpButtonPanel.activateNextButton(true);
+        jpButtonPanel.activatePreButton(false);
     }
 
     public void showInputDataSelectPanel() {
-
+        this.add(jpInputDataSelect);
+        jpButtonPanel.activateNextButton(true);
+        jpButtonPanel.activatePreButton(true);        
     }
 
     public void showLearningDataInputPanel() {
         
+    }
+
+    public void repaintPanels() {
+        this.revalidate();
+        jpTitlePanel.revalidate();
+        jpInputDataSelect.revalidate();
+        jpLearningDataInput.revalidate();
+        this.repaint();
+        jpTitlePanel.repaint();
+        jpInputDataSelect.repaint();
+        jpLearningDataInput.repaint();
     }
 }
